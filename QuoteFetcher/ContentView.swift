@@ -9,13 +9,33 @@
 import SwiftUI
 
 struct ContentView: View {
+	
+	@ObservedObject var viewModel: ContentViewModel
+	
     var body: some View {
-        Text("Hello World")
+		
+		Text("Hello World").navigationBarItems(trailing:
+			
+			Button(action: {
+				
+				print("Fetching..")
+				
+			}, label: {
+				
+				Text("Fetch")
+				
+			})
+		
+		)
+		
     }
+	
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+		NavigationView {
+			ContentView(viewModel: ContentViewModel())
+		}
     }
 }
