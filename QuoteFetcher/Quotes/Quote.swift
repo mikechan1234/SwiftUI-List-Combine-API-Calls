@@ -25,8 +25,6 @@ import Foundation
 //	"id": "mYpH8syTM8rf8KFORoAJmQeF"
 //}
 
-
-//"[{\"tags\":[\"courage\",\"inspire\",\"risk\",\"tod\"],\"permalink\":\"https:\\/\\/theysaidso.com\\/quote\\/mohamad-ali-he-who-is-not-courageous-enough-to-take-risks-will-accomplish-nothin\",\"background\":\"https:\\/\\/theysaidso.com\\/img\\/bgs\\/man_on_the_mountain.jpg\",\"date\":\"2019-09-25\",\"title\":\"Inspiring Quote of the day\",\"length\":\"78\",\"quote\":\"He who is not courageous enough to take risks will accomplish nothing in life.\",\"author\":\"Mohamad Ali\",\"id\":\"ifuqTGVbNWPSJIzhrGQakQeF\",\"category\":\"inspire\"}]"
 struct Quote: Codable, Identifiable {
 	
 	var id: String

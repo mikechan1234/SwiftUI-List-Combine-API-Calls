@@ -12,6 +12,7 @@ struct KanyeQuote: Codable, Identifiable {
 	
 	let quote: String
 	let id = UUID()
+	let date = Date()
 	
 	private enum CodingKeys: String, CodingKey {
 		case quote
@@ -19,6 +20,7 @@ struct KanyeQuote: Codable, Identifiable {
 	
 }
 
+//MARK: Generator
 extension KanyeQuote {
 	
 	static func generateQuote() -> KanyeQuote {

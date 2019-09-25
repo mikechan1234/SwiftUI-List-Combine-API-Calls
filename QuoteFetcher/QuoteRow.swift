@@ -15,13 +15,10 @@ struct QuoteRow: View {
 	
     var body: some View {
 		
-		let date = Date()
-		let dateString = DateFormatter.quoteDateFormatter.string(from: date)
-		
-		return VStack(alignment: .leading, spacing: 5) {
+		VStack(alignment: .leading, spacing: 5) {
 			
 			Text(quote.quote).fixedSize(horizontal: false, vertical: true)
-			Text(dateString).font(.caption)
+			Text(DateFormatter.quoteDateFormatter.string(from: quote.date)).font(.caption)
 			
 		}
 		
