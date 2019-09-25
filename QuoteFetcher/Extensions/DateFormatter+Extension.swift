@@ -14,7 +14,7 @@ extension DateFormatter {
 	class var quoteDateFormatter: DateFormatter {
 		
 		let formatter = DateFormatter()
-		formatter.dateFormat = "YYYY-MM-DD"
+		formatter.dateFormat = "dd-MM-YYYY"
 		formatter.locale = Locale.autoupdatingCurrent
 		
 		return formatter

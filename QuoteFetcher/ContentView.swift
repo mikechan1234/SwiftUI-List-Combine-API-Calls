@@ -14,11 +14,15 @@ struct ContentView: View {
 	
     var body: some View {
 		
-		Text("Hello World").navigationBarItems(trailing:
+		List(viewModel.quotes) { quote in
+			
+			QuoteRow(quote: quote)
+			
+		}.navigationBarItems(trailing:
 			
 			Button(action: {
 				
-				print("Fetching..")
+				self.viewModel.getQuote()
 				
 			}, label: {
 				
@@ -26,7 +30,7 @@ struct ContentView: View {
 				
 			})
 		
-		)
+		).navigationBarTitle("Quotes")
 		
     }
 	

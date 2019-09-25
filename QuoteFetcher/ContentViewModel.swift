@@ -12,42 +12,41 @@ import Combine
 class ContentViewModel: ObservableObject {
 	
 	let urlSession = URLSession(configuration: URLSessionConfiguration.default)
-	var quotes: [Quote] = []
-	
-	init() {
-		
-	}
+	@Published var quotes: [KanyeQuote] = []
 	
 }
 
 extension ContentViewModel {
 	
 	func getQuote() {
-		
-		guard let quoteURL = URL(string: "https://quotes.rest/qod") else {
-			
+				
+		guard let quoteURL = URL(string: "https://api.kanye.rest") else {
 			return
-			
 		}
 		
-		urlSession.dataTaskPublisher(for: quoteURL).map { (data, response) -> Data in
+		_ = urlSession.dataTaskPublisher(for: quoteURL).map { (data, response) -> Data in
 
 			return data
+
+		}.tryMap { (data) -> KanyeQuote in
 			
-		}.tryMap { (data) -> [String: Any] in
+			let jsonDecoder = JSONDecoder()
 			
-			guard let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
-//				throw
-				return [:]
-			} 
+			return try jsonDecoder.decode(KanyeQuote.self, from: data)
+
+		}.receive(on: DispatchQueue.main).sink(receiveCompletion: { (subscriber) in
+
+			switch subscriber {
+			case .failure(let error):
+				print("Error: \(error.localizedDescription)")
+			case .finished:
+				break
+			}
+
+		}) {[unowned self] (quote) in
 			
-			return json
-			
-//			let decoder = JSONDecoder()
-//			decoder.dateDecodingStrategy = .formatted(.quoteDateFormatter)
-//			decoder.decode(Quote.self, from: data)
-			
-			
+			self.quotes.insert(quote, at: 0)
+
 		}
 		
 	}

@@ -16,6 +16,9 @@
 		4CBDC93D23336B1F0009AD38 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDC93C23336B1F0009AD38 /* ContentViewModel.swift */; };
 		4CBDC93F233370460009AD38 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDC93E233370460009AD38 /* Quote.swift */; };
 		4CBDC941233371130009AD38 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBDC940233371130009AD38 /* DateFormatter+Extension.swift */; };
+		4CC7E31E233B358100AEDA8E /* QuoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7E31D233B358100AEDA8E /* QuoteRow.swift */; };
+		4CC7E320233B3B8C00AEDA8E /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7E31F233B3B8C00AEDA8E /* String+Extension.swift */; };
+		4CC7E322233B512600AEDA8E /* KanyeQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC7E321233B512600AEDA8E /* KanyeQuotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		4CBDC93C23336B1F0009AD38 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		4CBDC93E233370460009AD38 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		4CBDC940233371130009AD38 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		4CC7E31D233B358100AEDA8E /* QuoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRow.swift; sourceTree = "<group>"; };
+		4CC7E31F233B3B8C00AEDA8E /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4CC7E321233B512600AEDA8E /* KanyeQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanyeQuotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +72,9 @@
 				4C2D04E92330A41E00364B34 /* SceneDelegate.swift */,
 				4C2D04EB2330A41E00364B34 /* ContentView.swift */,
 				4CBDC93C23336B1F0009AD38 /* ContentViewModel.swift */,
-				4CBDC93E233370460009AD38 /* Quote.swift */,
-				4CBDC940233371130009AD38 /* DateFormatter+Extension.swift */,
+				4CC7E31D233B358100AEDA8E /* QuoteRow.swift */,
+				4CC7E323233B561200AEDA8E /* Quotes */,
+				4CC7E324233B561D00AEDA8E /* Extensions */,
 				4C2D04ED2330A41F00364B34 /* Assets.xcassets */,
 				4C2D04F22330A41F00364B34 /* LaunchScreen.storyboard */,
 				4C2D04F52330A41F00364B34 /* Info.plist */,
@@ -82,6 +89,24 @@
 				4C2D04F02330A41F00364B34 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4CC7E323233B561200AEDA8E /* Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				4CBDC93E233370460009AD38 /* Quote.swift */,
+				4CC7E321233B512600AEDA8E /* KanyeQuotes.swift */,
+			);
+			path = Quotes;
+			sourceTree = "<group>";
+		};
+		4CC7E324233B561D00AEDA8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CC7E31F233B3B8C00AEDA8E /* String+Extension.swift */,
+				4CBDC940233371130009AD38 /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,11 +180,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CC7E320233B3B8C00AEDA8E /* String+Extension.swift in Sources */,
 				4CBDC93D23336B1F0009AD38 /* ContentViewModel.swift in Sources */,
 				4C2D04E82330A41E00364B34 /* AppDelegate.swift in Sources */,
 				4CBDC941233371130009AD38 /* DateFormatter+Extension.swift in Sources */,
 				4C2D04EA2330A41E00364B34 /* SceneDelegate.swift in Sources */,
 				4CBDC93F233370460009AD38 /* Quote.swift in Sources */,
+				4CC7E322233B512600AEDA8E /* KanyeQuotes.swift in Sources */,
+				4CC7E31E233B358100AEDA8E /* QuoteRow.swift in Sources */,
 				4C2D04EC2330A41E00364B34 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
